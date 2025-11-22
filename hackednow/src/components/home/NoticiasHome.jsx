@@ -1,30 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
+import noticias from "@/data/noticias.json"; 
 
 export default function NoticiasHome() {
-  const noticias = [
-    {
-      id: 1,
-      titulo: "Nueva filtración de datos afecta a miles de usuarios",
-      fuente: "CyberNews",
-      fecha: "15 de julio de 2024",
-      imagen: "https://lh3.googleusercontent.com/aida-public/AB6AXuCiTN9YK8t8tiPwO3LjsgaABEdIxICRJgoMebH1UlTH79t5aJodYGLt3czw_pFN4WtAIhurxq9fGa7-DuFSqJHS0eHHSUKWfwvPTZP3_y2uqicbLU_5jZ5AzwOpqlTwxF5Py-J2WSRY89Ccgjq7ob3OUtcvA7TDg9pFdpuosUvlSeep5Z77_VdhlJ-fhcSmTKsNiTUdvsgp5DqglH2Xiitb4cjqTJI9WCywxx-DdW58VVDjJ-bOoR3rrcPyPMRmVZcXihBGgLyMtzk"
-    },
-    {
-      id: 2,
-      titulo: "Aumento de ataques de malware dirigidos a empresas",
-      fuente: "Security Today",
-      fecha: "10 de julio de 2024",
-      imagen: "https://lh3.googleusercontent.com/aida-public/AB6AXuCOOfoP1Cl_QksGsi0Wsxr-pfIjAx4ppKtG8DjXfxGPENxVuGNLRRQXzkubHHBApoYVRGaFn72PcVedQFxb_rmMRznaru_y5NOkaOy0OY99H2FhYKDfuFZGL1FjaHLyVlet3TIS85mf9QWhSkx8M7rYTYNjr4dwXE2MqseDUzC_SHGZD2EOGlJ6RahKx-b4BvHAymk-15rTbK69pjfOURec6DDeRdE8OzUqWWmq_hriXIgHmZ8aZRymbS9eNwGBb3tmI-JrygMRe4U"
-    },
-    {
-      id: 3,
-      titulo: "Vulnerabilidad crítica descubierta en software ampliamente utilizado",
-      fuente: "TechCrunch",
-      fecha: "5 de julio de 2024",
-      imagen: "https://lh3.googleusercontent.com/aida-public/AB6AXuCOF_yFg9haRUMbTqx3jPcBzSiK2C9sPoZUyVgjcCCvLBmaNQXjjDYE1SRLi6DHeIiJfLt7tZ1p3YaOIuQT4v-uOLOIkmiJW42tLrCQ6A0AuFYAGaFNfROxbjvKC5hLeunPl2DvmGB3ka4DtOEKTeh89UBUQFhXAwzD2bJQVPywpUQoGykkjzYTzIbNczzm4iAixvYq3_so8AdqH37sB5JGUqeSjXLREHwUNmPgkkq6HqlFXVmtlOJ29JENGOp0iPslGBbkNmCtXlo"
-    }
-  ];
 
   return (
     <section className="py-16 md:py-24">
