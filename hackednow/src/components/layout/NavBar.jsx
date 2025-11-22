@@ -43,7 +43,7 @@ export default function Navbar() {
         </nav>
         
         <Link
-          href="/login"
+          href="auth/login"
           className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#009dff] text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-[#0088dd] transition-colors"
         >
           <span className="truncate">Login / Registro</span>
