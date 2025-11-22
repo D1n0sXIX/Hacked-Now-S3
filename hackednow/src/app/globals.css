@@ -1,7 +1,6 @@
 /* Fuentes de Google */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;900&family=Space+Grotesk:wght@400;500;700&display=swap');
 
-/* styles/globals.css */
 @import "tailwindcss";
 
 @layer base {
@@ -19,7 +18,7 @@
   /* Estilos base del body */
   body {
     background-color: #0f1c24;
-    background-image: linear-gradient(135deg, #0f1c24 0%, #152533 50%, #1a2f3d 100%);
+    background-image: linear-gradient(135deg, #101820 0%, #172a36 40%, #1a2f3d 70%, #0b77fb66 100%);
     background-attachment: fixed;
     color: var(--text-primary);
     font-family: 'Space Grotesk', 'Noto Sans', sans-serif;
@@ -67,16 +66,46 @@
 @layer components {
   /* Botón primario reutilizable */
   .btn-primary {
-    @apply bg-[#009dff] text-white font-bold rounded-lg px-4 py-2 hover:bg-[#0088dd] transition-colors;
+    background-color: var(--accent-blue);
+    color: #ffffff;
+    font-weight: 700;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .btn-primary:hover {
+    background-color: #0088dd;
   }
 
   /* Botón secundario */
   .btn-secondary {
-    @apply bg-[#203b4b] text-white font-bold rounded-lg px-4 py-2 hover:bg-[#2e546b] transition-colors;
+    background-color: var(--bg-tertiary);
+    color: #ffffff;
+    font-weight: 700;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.2s ease;
+  }
+
+  .btn-secondary:hover {
+    background-color: #2e546b;
   }
 
   /* Card base */
   .card {
-    @apply bg-[#172a36] border border-[#2e546b] rounded-lg p-4;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-primary);
+    border-radius: 0.5rem;
+    padding: 1rem;
   }
+  
+  .container {
+  max-width: 1280px !important;
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
 }
+
+}
+
+
