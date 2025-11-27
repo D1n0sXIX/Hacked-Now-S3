@@ -4,13 +4,10 @@ import NoticiasHome from "@/components/home/NoticiasHome";
 
 export default function Home() {
   return (
-    <div>
-        <main>
-            <HeroSection />
-            <ComoFunciona />
-            <NoticiasHome />
-
-        </main>
-    </div>
+    <>
+      <HeroSection />
+      <ComoFunciona />
+      <NoticiasHome />
+    </>
   );
 }
