@@ -1,10 +1,10 @@
 
-export default function Home() {
+export default function Publicarcaso() {
   return (
     <div>
       <main>
         <h1>
-            HACKED NOW
+            Pagina de publicar caso
         </h1>
       </main>
     </div>
