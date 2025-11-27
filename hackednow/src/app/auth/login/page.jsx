@@ -3,9 +3,11 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { useAuth } from '@/contexts/AuthContext';
 
 export default function Login() {
   const router = useRouter();
+  const { login } = useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -24,41 +26,30 @@ export default function Login() {
     setError('');
     setIsLoading(true);
 
-    // Simular un pequeño delay (como si fuera una petición al backend)
     setTimeout(() => {
       if (email === DEMO_USER.email && password === DEMO_USER.password) {
-        // Login exitoso
         const userData = {
           email: DEMO_USER.email,
           nombre: DEMO_USER.nombre,
           avatar: DEMO_USER.avatar
         };
         
-        // Guardar en localStorage
-        localStorage.setItem('user', JSON.stringify(userData));
+        // Usar el método login del contexto
+        login(userData);
         
         // Redirigir al home
         router.push('/');
       } else {
-        // Login fallido
-        setError('Credenciales incorrectas. Usa las credenciales de demo.');
+        setError('Credenciales incorrectas. Usa: demo@hackednow.com / demo123');
         setIsLoading(false);
       }
     }, 500);
   };
 
-  const autoFillDemo = () => {
-    setEmail(DEMO_USER.email);
-    setPassword(DEMO_USER.password);
-    setError('');
-  };
-
   return (
     <div className="min-h-screen flex items-center justify-center px-4 py-12">
       <div className="w-full max-w-md">
-        {/* Card principal */}
         <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8 shadow-2xl">
-          {/* Header */}
           <div className="text-center mb-8">
             <h1 className="text-3xl font-bold text-white mb-2">
               Iniciar sesión
@@ -68,9 +59,14 @@ export default function Login() {
             </p>
           </div>
 
-          {/* Formulario */}
+          {/* Credenciales demo */}
+          <div className="bg-[#009dff]/10 border border-[#009dff]/30 rounded-lg p-4 mb-6">
+            <p className="text-[#009dff] text-sm font-medium mb-2">Credenciales de demo:</p>
+            <p className="text-white text-xs">Email: demo@hackednow.com</p>
+            <p className="text-white text-xs">Contraseña: demo123</p>
+          </div>
+
           <form onSubmit={handleLogin} className="space-y-6">
-            {/* Email */}
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-white mb-2">
                 Correo electrónico
@@ -86,7 +82,6 @@ export default function Login() {
               />
             </div>
 
-            {/* Password */}
             <div>
               <label htmlFor="password" className="block text-sm font-medium text-white mb-2">
                 Contraseña
@@ -102,24 +97,31 @@ export default function Login() {
               />
             </div>
 
-            {/* Error message */}
             {error && (
               <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-3">
                 <p className="text-red-400 text-sm text-center">{error}</p>
               </div>
             )}
 
-            {/* Botón submit */}
-            <button
-              type="submit"
-              disabled={isLoading}
-              className="w-full bg-[#009dff] text-white font-bold py-3 px-4 rounded-lg hover:bg-[#0088dd] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              {isLoading ? 'Iniciando sesión...' : 'Iniciar sesión'}
-            </button>
+            <div className='flex flex-col gap-2'>
+              <button
+                type="submit"
+                disabled={isLoading}
+                className="w-full bg-[#009dff] text-black font-bold py-3 px-4 rounded-lg hover:bg-[#0088dd] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {isLoading ? 'Iniciando sesión...' : 'Iniciar sesión'}
+              </button>
+              
+              <button
+                type="button"
+                disabled={isLoading}
+                className="w-full bg-[#21404A] text-white font-bold py-3 px-4 rounded-lg hover:bg-[#14282e] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                Iniciar sesión con Google
+              </button>
+            </div>
           </form>
 
-          {/* Divider */}
           <div className="relative my-6">
             <div className="absolute inset-0 flex items-center">
               <div className="w-full border-t border-white/10"></div>
@@ -129,36 +131,19 @@ export default function Login() {
             </div>
           </div>
 
-          {/* Credenciales de Demo */}
-          <div className="bg-[#009dff]/10 border border-[#009dff]/30 rounded-lg p-4 flex items-start gap-2 mb-3">
-         
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 text-[#009dff] flex-shrink-0 mt-0.5">
-                <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a.75.75 0 000 1.5h.253a.25.25 0 01.244.304l-.459 2.066A1.75 1.75 0 0010.747 15H11a.75.75 0 000-1.5h-.253a.25.25 0 01-.244-.304l.459-2.066A1.75 1.75 0 009.253 9H9z" clipRule="evenodd" />
-              </svg>
-              <div>
-                <p className="text-sm font-semibold text-[#009dff] mb-1">
-                  Usuario de demostración
-                </p>
-                <p className="text-xs text-[#8db5ce] space-y-1">
-                  <span className="block"><strong>Email:</strong> demo@hackednow.com</span>
-                  <span className="block"><strong>Password:</strong> demo123</span>
-                </p>
-              </div>
-           
-          </div>
-
-          {/* Link al registro (deshabilitado) */}
           <div className="mt-6 text-center">
-            <p className="text-sm text-[#8db5ce]">
+            <p className="text-sm text-[#8db5ce]">  
               ¿No tienes cuenta?{' '}
-              <span className="text-white/50 cursor-not-allowed" title="Registro no disponible en demo">
+              <Link 
+                href="/auth/register" 
+                className="text-white hover:text-[#009dff] transition-colors"
+              >
                 Registrarse
-              </span>
+              </Link>
             </p>
           </div>
         </div>
 
-        {/* Link volver */}
         <div className="mt-6 text-center">
           <Link 
             href="/" 
