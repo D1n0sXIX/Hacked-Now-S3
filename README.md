@@ -68,7 +68,7 @@ Fase Desarrollo — Asignaciones (vacías donde no hay tareas asigandas):
 - Javi: 
 - Juan: 
 - Willy: 
-- Alej: 
+- Alej: Pagina Publicar-caso
 
 Fase Presentacion — Asignaciones (vacías donde no hay tareas asiganda):
 - Ivan: Referencias de estilo
