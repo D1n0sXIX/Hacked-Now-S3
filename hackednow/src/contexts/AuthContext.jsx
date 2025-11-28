@@ -13,7 +13,8 @@ export function AuthProvider({ children }) {
     const storedUser = localStorage.getItem('user');
     if (storedUser) {
       try {
-        setUser(JSON.parse(storedUser)); //WARNING DE OPTIZiMACION , IGNORAR POR AHORA 
+        // eslint-disable-next-line react-hooks/set-state-in-effect
+        setUser(JSON.parse(storedUser)); //WARNING DE OPTIZiMACION , IGNORAR POR AHORA
       } catch (error) {
         console.error('Error parsing user data:', error);
         localStorage.removeItem('user');
@@ -27,13 +28,38 @@ export function AuthProvider({ children }) {
     setUser(userData);
   };
 
+  const updateUser = (updates) => {
+    setUser((previousUser) => {
+      const currentUser = previousUser || {};
+      const mergedUser = {
+        ...currentUser,
+        ...updates,
+        notificaciones: {
+          ...(currentUser.notificaciones || {}),
+          ...(updates?.notificaciones || {}),
+        },
+        preferencias: {
+          ...(currentUser.preferencias || {}),
+          ...(updates?.preferencias || {}),
+        },
+        seguridad: {
+          ...(currentUser.seguridad || {}),
+          ...(updates?.seguridad || {}),
+        },
+      };
+
+      localStorage.setItem('user', JSON.stringify(mergedUser));
+      return mergedUser;
+    });
+  };
+
   const logout = () => {
     localStorage.removeItem('user');
     setUser(null);
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, logout, isLoading }}>
+    <AuthContext.Provider value={{ user, login, logout, updateUser, isLoading }}>
       {children}
     </AuthContext.Provider>
   );

@@ -31,7 +31,27 @@ export default function Login() {
         const userData = {
           email: DEMO_USER.email,
           nombre: DEMO_USER.nombre,
-          avatar: DEMO_USER.avatar
+          avatar: DEMO_USER.avatar,
+          rol: 'Analista de ciberseguridad',
+          telefono: '+34 600 123 456',
+          ubicacion: 'Madrid, España',
+          bio: 'Apasionado por la defensa digital y la concienciación en ciberseguridad.',
+          notificaciones: {
+            incidencias: true,
+            boletin: true,
+            mensajes: true,
+            alertasSeguridad: true,
+          },
+          preferencias: {
+            idioma: 'es',
+            zonaHoraria: 'Europe/Madrid',
+            tema: 'auto',
+            resumenSemanal: true,
+          },
+          seguridad: {
+            dobleFactor: true,
+            alertasInicioSesion: true,
+          },
         };
         
         // Usar el método login del contexto
