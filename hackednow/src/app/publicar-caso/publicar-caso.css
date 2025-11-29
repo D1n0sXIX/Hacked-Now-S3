@@ -1,0 +1,317 @@
+/* Estilos específicos para la página Publicar Caso */
+
+/* Variables de color basadas en el diseño */
+.publicar-caso-container {
+  --bg-primary: #0a1929;
+  --bg-secondary: #1a2f42;
+  --bg-input: #1e3a52;
+  --bg-card: #132f4c;
+  --border-color: #2d4a63;
+  --text-primary: #ffffff;
+  --text-secondary: #b0c4de;
+  --accent-cyan: #00d9ff;
+  --accent-blue: #0080ff;
+  --button-primary: #00b8ff;
+  --button-secondary: #2d4a63;
+  --category-bg: #1e3a52;
+  --category-selected: #00688a;
+}
+
+/* Contenedor principal */
+.publicar-caso-page {
+  background: linear-gradient(135deg, #0a1929 0%, #132f4c 100%);
+  min-height: 100vh;
+  padding: 2rem 1.5rem;
+}
+
+/* Título principal */
+.publicar-caso-page h3 {
+  color: var(--text-primary);
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Inputs de texto */
+.publicar-caso-page input[type="text"],
+.publicar-caso-page textarea {
+  background-color: var(--bg-input);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  border-radius: 0.5rem;
+  padding: 0.875rem 1rem;
+  transition: all 0.2s ease;
+}
+
+.publicar-caso-page input[type="text"]:focus,
+.publicar-caso-page textarea:focus {
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 0 3px rgba(0, 217, 255, 0.1);
+  outline: none;
+}
+
+.publicar-caso-page input::placeholder,
+.publicar-caso-page textarea::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.6;
+}
+
+/* Labels */
+.publicar-caso-page label {
+  color: var(--text-primary);
+  font-weight: 500;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Zona de multimedia */
+.publicar-caso-page .multimedia-upload {
+  background-color: var(--bg-secondary);
+  border: 2px dashed var(--border-color);
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.publicar-caso-page .multimedia-upload:hover {
+  border-color: var(--accent-cyan);
+}
+
+.publicar-caso-page .multimedia-upload button {
+  background-color: var(--button-primary);
+  color: var(--text-primary);
+  font-weight: 600;
+  border-radius: 0.5rem;
+  padding: 0.625rem 1.5rem;
+  transition: all 0.2s ease;
+}
+
+.publicar-caso-page .multimedia-upload button:hover {
+  background-color: var(--accent-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 184, 255, 0.3);
+}
+
+/* Categorías */
+.publicar-caso-page .categoria-button {
+  background-color: var(--category-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.publicar-caso-page .categoria-button:hover {
+  background-color: var(--bg-secondary);
+  border-color: var(--accent-cyan);
+  transform: translateY(-2px);
+}
+
+.publicar-caso-page .categoria-button.selected {
+  background-color: var(--category-selected);
+  border-color: var(--accent-cyan);
+  color: var(--text-primary);
+  box-shadow: 0 4px 12px rgba(0, 104, 138, 0.4);
+}
+
+/* Tooltip de categorías */
+.publicar-caso-page .categoria-tooltip {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  border-radius: 0.5rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* Etiquetas */
+.publicar-caso-page .etiqueta-tag {
+  background-color: var(--category-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  padding: 0.375rem 0.875rem;
+  font-size: 0.875rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.publicar-caso-page .etiqueta-tag:hover {
+  background-color: var(--bg-secondary);
+  border-color: var(--accent-cyan);
+}
+
+.publicar-caso-page .etiqueta-tag button {
+  color: var(--text-secondary);
+  transition: color 0.2s ease;
+}
+
+.publicar-caso-page .etiqueta-tag button:hover {
+  color: #ff4444;
+}
+
+/* Switch anónimo */
+.switch-anonimo-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.switch-anonimo-container .switch-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.switch-anonimo-container .switch-label {
+  color: var(--text-primary);
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.switch-anonimo-container .switch-description {
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+}
+
+.switch-anonimo-toggle {
+  position: relative;
+  display: inline-flex;
+  height: 1.75rem;
+  width: 3.5rem;
+  align-items: center;
+  border-radius: 9999px;
+  background-color: var(--border-color);
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.switch-anonimo-toggle:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 217, 255, 0.2);
+}
+
+.switch-anonimo-toggle.active {
+  background-color: var(--accent-cyan);
+}
+
+.switch-anonimo-toggle .switch-thumb {
+  display: inline-block;
+  height: 1.25rem;
+  width: 1.25rem;
+  border-radius: 50%;
+  background-color: var(--text-primary);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transform: translateX(0.25rem);
+  transition: transform 0.2s ease;
+}
+
+.switch-anonimo-toggle.active .switch-thumb {
+  transform: translateX(2rem);
+}
+
+/* Botones de acción */
+.publicar-caso-page .boton-publicar {
+  background-color: var(--button-primary);
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.875rem 2rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 184, 255, 0.3);
+}
+
+.publicar-caso-page .boton-publicar:hover {
+  background-color: var(--accent-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 184, 255, 0.4);
+}
+
+.publicar-caso-page .boton-publicar:active {
+  transform: translateY(0);
+}
+
+.publicar-caso-page .boton-borrador {
+  background-color: var(--button-secondary);
+  color: var(--text-primary);
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.875rem 2rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.publicar-caso-page .boton-borrador:hover {
+  background-color: var(--bg-secondary);
+  border-color: var(--accent-cyan);
+  transform: translateY(-2px);
+}
+
+.publicar-caso-page .boton-borrador:active {
+  transform: translateY(0);
+}
+
+/* Texto auxiliar */
+.publicar-caso-page .text-muted {
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+}
+
+/* Grid responsive */
+@media (min-width: 1024px) {
+  .publicar-caso-page .grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.publicar-caso-page .fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Scrollbar personalizado */
+.publicar-caso-page textarea::-webkit-scrollbar {
+  width: 8px;
+}
+
+.publicar-caso-page textarea::-webkit-scrollbar-track {
+  background: var(--bg-input);
+  border-radius: 4px;
+}
+
+.publicar-caso-page textarea::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+.publicar-caso-page textarea::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-cyan);
+}
