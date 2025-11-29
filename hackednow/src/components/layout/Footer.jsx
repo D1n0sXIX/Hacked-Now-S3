@@ -8,22 +8,10 @@ export default function Footer() {
         {/* Enlaces esenciales */}
         <div className="flex flex-wrap justify-center gap-4 sm:gap-6 text-sm">
           <Link 
-            href="/terminos" 
+            href="/about-Us" 
             className="text-[#8db5ce] hover:text-[#009dff] transition-colors whitespace-nowrap"
           >
-            Términos de uso
-          </Link>
-          <Link 
-            href="/privacidad" 
-            className="text-[#8db5ce] hover:text-[#009dff] transition-colors whitespace-nowrap"
-          >
-            Privacidad
-          </Link>
-          <Link 
-            href="/contacto" 
-            className="text-[#8db5ce] hover:text-[#009dff] transition-colors whitespace-nowrap"
-          >
-            Contacto
+            About Us
           </Link>
           <Link 
             href="https://github.com/D1n0sXIX/Hacked-Now-S3"
