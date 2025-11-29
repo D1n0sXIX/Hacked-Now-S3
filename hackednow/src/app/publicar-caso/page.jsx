@@ -20,7 +20,7 @@ export default function Publicarcaso() {
   const handlePublicar = () => {
     // Validar que los campos requeridos estén completos
     if (!titulo.trim()) {
-      alert('Por favor, ingresa un título para el caso');
+      alert('Por favor, introduce un título para el caso');
       return;
     }
     
@@ -30,7 +30,7 @@ export default function Publicarcaso() {
     }
     
     if (!categoriaSeleccionada) {
-      alert('Por favor, selecciona una categoría');
+      alert('Por favor, selecciona al menos 1 categoría');
       return;
     }
 
@@ -57,7 +57,7 @@ export default function Publicarcaso() {
       // Guardar en localStorage
       localStorage.setItem('casos', JSON.stringify(casos));
 
-      alert('¡Caso publicado con éxito!');
+      alert('¡Caso publicado!');
       
       // Limpiar formulario
       setTitulo('');

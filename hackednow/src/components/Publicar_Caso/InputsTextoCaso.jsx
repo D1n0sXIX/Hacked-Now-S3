@@ -28,7 +28,7 @@ export default function InputsTextoCaso({ titulo, setTitulo, descripcion, setDes
           id="descripcion"
           value={descripcion}
           onChange={(e) => setDescripcion(e.target.value)}
-          placeholder="Describe detalladamente tu caso de ciberseguridad..."
+          placeholder="Describe detalladamente su caso ..."
           rows={8}
           maxLength={2000}
         />
