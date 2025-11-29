@@ -62,22 +62,12 @@ Repartir Tareas
 ---------------
 Fase Desarrollo — Asignaciones (vacías donde no hay tareas asigandas):
 
-- Ivan: Inicio
-- Alex: PaginaUser
-- Henry: 
-- Javi: 
-- Juan: 
-- Willy: 
-- Alej: Pagina Publicar-caso
-
-Fase Presentacion — Asignaciones (vacías donde no hay tareas asiganda):
-- Ivan: Referencias de estilo
-- Alex: 
-- Henry: Entrevistas
-- Javi: 
-- Juan: 
-- Willy: 
-- Alej: 
-
+- [x] Ivan: Inicio 
+- [x] Alex: PaginaUser
+- [ ] Henry: Foro + Caso-Foro ( + Entrevistas)
+- [ ] Javi: Zona-Colaboradores-AboutUs
+- [ ] Juan: AboutUs
+- [ ] Willy: ZonaNoticias-Una-Noticia
+- [x] Alej: Pagina Publicar-caso
 
 
