@@ -1,10 +1,10 @@
 
-export default function Home() {
+export default function Noticias() {
   return (
     <div>
       <main>
         <h1>
-            HACKED NOW
+            ESTO ES la pagina de NOTICIAS
         </h1>
       </main>
     </div>
