@@ -20,8 +20,8 @@ export default function InputEtiquetas({ etiquetas, setEtiquetas }) {
   };
 
   return (
-    <div className="flex flex-col gap-3 mb-6">
-      <label htmlFor="etiquetas" className="text-sm font-medium text-foreground">
+    <div className="input-etiquetas-container">
+      <label htmlFor="etiquetas">
         Etiquetas adicionales
       </label>
       
@@ -32,30 +32,19 @@ export default function InputEtiquetas({ etiquetas, setEtiquetas }) {
         onChange={(e) => setInputValue(e.target.value)}
         onKeyDown={handleAddEtiqueta}
         placeholder="Escribe una etiqueta y presiona Enter..."
-        className="w-full px-4 py-3 bg-input-background border border-input rounded-lg 
-                   text-foreground placeholder:text-muted-foreground
-                   focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent
-                   transition-all duration-200"
       />
 
-      {/* Mostrar etiquetas añadidas */}
       {etiquetas.length > 0 && (
-        <div className="flex flex-wrap gap-2">
+        <div className="etiquetas-display">
           {etiquetas.map((etiqueta, index) => (
-            <span
-              key={index}
-              className="inline-flex items-center gap-2 px-3 py-1.5 
-                       bg-accent text-accent-foreground rounded-full text-sm"
-            >
+            <span key={index} className="etiqueta-tag">
               {etiqueta}
               <button
                 type="button"
                 onClick={() => handleRemoveEtiqueta(etiqueta)}
-                className="hover:text-destructive transition-colors duration-200"
                 aria-label={`Eliminar etiqueta ${etiqueta}`}
               >
                 <svg
-                  className="w-4 h-4"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -73,7 +62,7 @@ export default function InputEtiquetas({ etiquetas, setEtiquetas }) {
         </div>
       )}
 
-      <p className="text-xs text-muted-foreground">
+      <p className="etiquetas-help-text">
         Presiona Enter para añadir etiquetas. {etiquetas.length > 0 && `(${etiquetas.length} añadidas)`}
       </p>
     </div>

@@ -18,14 +18,58 @@ export default function Publicarcaso() {
   const [esAnonimo, setEsAnonimo] = useState(false);
 
   const handlePublicar = () => {
-    // Lógica para publicar el caso (a implementar)
-    console.log("Publicando caso:", {
-      titulo,
-      descripcion,
-      categoria: categoriaSeleccionada,
-      etiquetas,
-      esAnonimo
-    });
+    // Validar que los campos requeridos estén completos
+    if (!titulo.trim()) {
+      alert('Por favor, ingresa un título para el caso');
+      return;
+    }
+    
+    if (!descripcion.trim()) {
+      alert('Por favor, describe el caso');
+      return;
+    }
+    
+    if (!categoriaSeleccionada) {
+      alert('Por favor, selecciona una categoría');
+      return;
+    }
+
+    try {
+      // Crear el nuevo caso
+      const nuevoCaso = {
+        id: Date.now().toString(),
+        titulo: titulo.trim(),
+        descripcion: descripcion.trim(),
+        categoria: categoriaSeleccionada,
+        etiquetas: etiquetas,
+        compartidoEnForo: esAnonimo,
+        fechaCreacion: new Date().toISOString(),
+        estado: 'publicado'
+      };
+
+      // Obtener casos existentes del localStorage
+      const casosGuardados = localStorage.getItem('casos');
+      const casos = casosGuardados ? JSON.parse(casosGuardados) : [];
+
+      // Agregar el nuevo caso
+      casos.push(nuevoCaso);
+
+      // Guardar en localStorage
+      localStorage.setItem('casos', JSON.stringify(casos));
+
+      alert('¡Caso publicado con éxito!');
+      
+      // Limpiar formulario
+      setTitulo('');
+      setDescripcion('');
+      setCategoriaSeleccionada(null);
+      setEtiquetas([]);
+      setEsAnonimo(false);
+
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Error al guardar el caso');
+    }
   };
 
   const handleGuardarBorrador = () => {
@@ -35,11 +79,11 @@ export default function Publicarcaso() {
 
   return (
     <div className="publicar-caso-page">
-      <main className="max-w-4xl mx-auto publicar-caso-container">
-        <h3 className="text-3xl font-bold text-foreground mb-8">Publica tu Caso de Ciberseguridad</h3>
+      <main className="publicar-caso-container">
+        <h3>Publica tu Caso de Ciberseguridad</h3>
         
         {/* Zona de texto y multimedia */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+        <div className="publicar-grid-layout">
           <InputsTextoCaso 
             titulo={titulo}
             setTitulo={setTitulo}
