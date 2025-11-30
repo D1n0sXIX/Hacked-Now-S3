@@ -1,1 +1,66 @@
-[]
+[
+  {
+    "id": "1",
+    "titulo": "Ataque de Ransomware en servidor corporativo",
+    "descripcion": "Detectamos cifrado de archivos en el servidor principal. Todos los documentos tienen extensión .locked",
+    "categoria": "ransomware",
+    "etiquetas": ["urgente", "servidor", "cifrado"],
+    "compartidoEnForo": true,
+    "fechaCreacion": "2025-11-28T10:30:00.000Z",
+    "estado": "publicado",
+    "usuario": "Carlos Martínez",
+    "respuestaExpertos": {
+      "experto": "Jorge Ramírez",
+      "especialidad": "Ciberseguridad Empresarial",
+      "texto": "Basándome en la descripción, recomiendo:\n\n1) Aislar inmediatamente el servidor afectado\n2) No pagar el rescate\n3) Verificar backups disponibles\n4) Analizar logs para identificar punto de entrada\n5) Contactar con las autoridades.\n\nEs crucial no intentar desencriptar sin conocer el tipo exacto de ransomware.",
+      "fecha": "2025-11-28T11:00:00.000Z"
+    },
+    "comentarios": [
+      {
+        "id": "c1",
+        "usuario": "Laura Ruiz",
+        "texto": "Tuvimos un caso similar el mes pasado en nuestra empresa. Lo primero que hicimos fue desconectar inmediatamente el servidor de la red para evitar que se propagara a otros equipos.\n\nLuego contactamos con nuestro equipo de ciberseguridad interno y también con una consultora externa especializada. Pudimos recuperar la mayoría de los archivos de los backups que teníamos en la nube, pero perdimos algunos datos del último día.\n\nLa lección más importante fue mantener backups actualizados y aislados de la red principal. También implementamos autenticación de dos factores en todos los accesos administrativos.",
+        "fecha": "2025-11-28T14:20:00.000Z"
+      },
+      {
+        "id": "c2",
+        "usuario": "Pedro Sánchez",
+        "texto": "¿Ya identificaron el tipo de ransomware específico que os afectó? Es muy importante saberlo porque algunos tienen soluciones de desencriptación disponibles públicamente.\n\nPor ejemplo, si es WannaCry, Locky o alguna variante conocida, puede que existan herramientas gratuitas de recuperación. Os recomiendo que subáis una muestra del archivo cifrado (sin datos sensibles) a sitios como ID Ransomware para identificarlo.\n\nTambién deberíais revisar vuestros logs del firewall y del antivirus de las últimas semanas para ver cómo entró el malware, si fue por email, una vulnerabilidad sin patchear o algún acceso remoto comprometido.",
+        "fecha": "2025-11-28T16:45:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "titulo": "Email sospechoso de phishing bancario",
+    "descripcion": "Recibí un correo que parece de mi banco pidiendo actualizar datos. La URL es similar pero no exacta",
+    "categoria": "phishing",
+    "etiquetas": ["email", "banco", "sospechoso"],
+    "compartidoEnForo": true,
+    "fechaCreacion": "2025-11-27T15:45:00.000Z",
+    "estado": "publicado",
+    "usuario": "Ana García",
+    "respuestaExpertos": null,
+    "comentarios": [
+      {
+        "id": "c3",
+        "usuario": "Roberto Fernández",
+        "texto": "Por favor, nunca hagas clic en esos enlaces ni descargues archivos adjuntos de correos sospechosos.\nLo que deberías hacer es verificar directamente en la web oficial del banco escribiendo tú mismo la URL en el navegador, no haciendo clic en el enlace del correo.\nTambién puedes llamar al número de atención al cliente que aparece en tu tarjeta o en la web oficial (no uses números que aparezcan en el email sospechoso).\nLos bancos NUNCA te pedirán que actualices datos sensibles por correo electrónico.\n\nFíjate bien en detalles como la dirección del remitente (puede ser algo como banco-seguridad@gmail.com en lugar del dominio oficial), errores ortográficos, o un tono urgente tratando de asustarte para que actúes rápido sin pensar. Si tienes dudas, mejor reenvía el correo al departamento de seguridad de tu banco para que lo verifiquen.",
+        "fecha": "2025-11-27T18:30:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "titulo": "Malware detectado en estación de trabajo",
+    "descripcion": "El antivirus detectó un troyano en el equipo de contabilidad. Sistema operativo Windows 10",
+    "categoria": "malware",
+    "etiquetas": ["troyano", "windows", "antivirus"],
+    "compartidoEnForo": true,
+    "fechaCreacion": "2025-11-29T09:15:00.000Z",
+    "estado": "publicado",
+    "usuario": "Miguel López",
+    "respuestaExpertos": null,
+    "comentarios": []
+  }
+]

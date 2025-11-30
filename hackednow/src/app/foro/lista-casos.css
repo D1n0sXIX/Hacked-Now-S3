@@ -1,0 +1,141 @@
+/* Variables de color basadas en la estética del proyecto */
+:root {
+  --bg-primary: #0a1929;
+  --bg-secondary: #1a2f42;
+  --bg-card: #132f4c;
+  --border-color: #2d4a63;
+  --text-primary: #ffffff;
+  --text-secondary: #b0c4de;
+  --accent-cyan: #00d9ff;
+  --accent-blue: #0080ff;
+}
+
+/* Contenedor principal de la lista */
+.lista-casos {
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.lista-casos h2 {
+  color: var(--text-primary);
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Grid de casos */
+.casos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Tarjeta de cada caso */
+.caso-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.caso-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 184, 255, 0.15);
+  border-color: var(--accent-cyan);
+}
+
+/* Header de la tarjeta */
+.caso-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+/* Usuario */
+.caso-usuario {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.caso-usuario::before {
+  content: "👤";
+  font-size: 1rem;
+}
+
+/* Badge de experto */
+.badge-experto {
+  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+  color: var(--bg-primary);
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Título del caso */
+.caso-card h3 {
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+/* Categoría */
+.caso-categoria {
+  display: inline-block;
+  background: var(--accent-blue);
+  color: var(--text-primary);
+  padding: 0.375rem 0.875rem;
+  border-radius: 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+}
+
+/* Etiquetas */
+.caso-etiquetas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.caso-etiquetas .etiqueta {
+  background: var(--bg-secondary);
+  color: var(--accent-cyan);
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  border: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+
+.caso-etiquetas .etiqueta:hover {
+  background: var(--accent-cyan);
+  color: var(--bg-primary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .casos-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .lista-casos h2 {
+    font-size: 1.5rem;
+  }
+}

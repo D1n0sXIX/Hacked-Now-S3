@@ -44,7 +44,8 @@ export default function Publicarcaso() {
         etiquetas: etiquetas,
         compartidoEnForo: esAnonimo,
         fechaCreacion: new Date().toISOString(),
-        estado: 'publicado'
+        estado: 'publicado',
+        usuario: 'Usuario Demo'
       };
 
       // Obtener casos existentes del localStorage

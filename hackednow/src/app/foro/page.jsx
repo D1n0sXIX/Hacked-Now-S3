@@ -1,12 +1,10 @@
 
+import ListaCasos from "@/components/Foro/ListaCasos";
+
 export default function Foro() {
   return (
     <div>
-      <main>
-        <h1>
-            ESTO ES EL FORO
-        </h1>
-      </main>
+      <ListaCasos />
     </div>
   );
 }
