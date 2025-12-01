@@ -18,6 +18,7 @@ export default function Navbar() {
     { href: '/foro', label: 'Foro' },
     { href: '/noticias', label: 'Noticias' },
     { href: '/publicar-caso', label: 'Publicar caso' },
+    { href: '/plan-desarrollador', label: 'Plan Premium' },
   ];
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
