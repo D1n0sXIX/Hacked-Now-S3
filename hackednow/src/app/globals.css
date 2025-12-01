@@ -15,16 +15,32 @@
     --accent-blue: #009dff;
   }
 
-  /* Estilos base del body */
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+  }
+
   body {
     background-color: #0f1c24;
     background-image: linear-gradient(135deg, #101820 0%, #172a36 40%, #1a2f3d 70%, #0b77fb66 100%);
     background-attachment: fixed;
     color: var(--text-primary);
     font-family: 'Space Grotesk', 'Noto Sans', sans-serif;
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
+  }
+
+ /* Clase para páginas con scroll-snap */
+  html.snap-scroll {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+    scroll-padding-top: 0px; /* Ajustá este valor a la altura de tu Navbar */
+  }
+
+  html.snap-scroll body {
+    height: auto;
+    overflow: visible;
   }
 
   /* Reset básico */
