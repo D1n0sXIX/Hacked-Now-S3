@@ -28,6 +28,9 @@ export default function PremiumPlanPage() {
   
   // URL actualizada para ir al formulario de pago
   const checkoutUrl = "/plan-desarrollador/checkout";
+  
+  // Ruta de la imagen logo-premium.png en la carpeta public/images
+  const IMAGE_PATH = "/images/logo-premium.png"; 
 
   return (
     <div className="container mx-auto py-20">
@@ -43,31 +46,69 @@ export default function PremiumPlanPage() {
         </p>
       </header>
       
-      {/* Sección de Precio (Destacada) */}
+      {/* Sección de Precios: Transormada en una cuadrícula para añadir más planes */}
       <section className="flex justify-center mb-20 px-4">
-        {/* Tarjeta de precio con el estilo 'card' */}
-        <div className="card text-center p-10 w-full max-w-md border-2" style={{ borderColor: 'var(--accent-blue)' }}>
+        
+        {/* NUEVA ESTRUCTURA: Grid o Flex para la comparación de planes */}
+        {/* Se usa md:grid-cols-3 para dejar espacio para 2 columnas más */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-6xl"> 
           
-          <h2 className="text-2xl font-bold mb-4 uppercase tracking-wider" style={{ color: 'var(--accent-blue)' }}>
-            PLAN PREMIUM
-          </h2>
-          
-          <div className="flex items-end justify-center mb-6">
-            <span className="text-6xl font-black" style={{ color: 'var(--text-primary)' }}>
-              {price.split('€')[0]}€
-            </span>
-            <span className="text-xl ml-2 mb-2" style={{ color: 'var(--text-secondary)' }}>
-              {period}
-            </span>
+          {/* Columna 1: Placeholder para Plan Básico (para mantener el centrado visual) */}
+          <div className="hidden md:block">
+            {/* Aquí iría el código de la tarjeta del Plan Básico */}
+            <div className="card text-center p-10 h-full opacity-0"></div>
           </div>
           
-          <p className="mb-8" style={{ color: 'var(--text-secondary)' }}>
-            Sin permanencia. Cancela cuando quieras.
-          </p>
+          {/* Columna Central: Tarjeta del Plan PREMIUM */}
+          <div className="w-full">
+            {/* Tarjeta de precio con el estilo 'card' */}
+            <div className="card text-center p-10 h-full border-2" 
+                 style={{ borderColor: 'var(--accent-blue)', 
+                          transform: 'scale(1.05)', // Destaca la tarjeta premium
+                          zIndex: 10 }}> 
+              
+              {/* Contenedor del Título y Logo */}
+              <div className="flex flex-col items-center justify-center mb-4">
+                  
+                  {/* Título - AHORA VA PRIMERO */}
+                  <h2 className="text-2xl font-bold uppercase tracking-wider mb-2" style={{ color: 'var(--accent-blue)' }}>
+                    PLAN PREMIUM
+                  </h2>
+                  
+                  {/* LOGO DEBAJO DEL TÍTULO */}
+                  <img 
+                    src={IMAGE_PATH} 
+                    alt="Logo Premium" 
+                    className="w-20 h-20 object-contain" // Tamaño de ícono
+                  />
+                  
+              </div>
+              
+              <div className="flex items-end justify-center mb-6">
+                <span className="text-6xl font-black" style={{ color: 'var(--text-primary)' }}>
+                  {price.split('€')[0]}€
+                </span>
+                <span className="text-xl ml-2 mb-2" style={{ color: 'var(--text-secondary)' }}>
+                  {period}
+                </span>
+              </div>
+              
+              <p className="mb-8" style={{ color: 'var(--text-secondary)' }}>
+                Sin permanencia. Cancela cuando quieras.
+              </p>
+              
+              <a href={checkoutUrl} className="btn-primary block w-full py-4 text-lg text-center">
+                Empezar Ahora
+              </a>
+            </div>
+          </div>
           
-          <a href={checkoutUrl} className="btn-primary block w-full py-4 text-lg text-center">
-            Empezar Ahora
-          </a>
+          {/* Columna 3: Placeholder para Plan Desarrollador (para mantener el centrado visual) */}
+          <div className="hidden md:block">
+            {/* Aquí iría el código de la tarjeta del Plan Desarrollador */}
+            <div className="card text-center p-10 h-full opacity-0"></div>
+          </div>
+          
         </div>
       </section>
 
