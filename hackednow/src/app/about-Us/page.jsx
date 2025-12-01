@@ -78,15 +78,15 @@ export default function AboutUs() {
                   color: "#009dff",
                 }}
               >
-                El perfil vulnerable
+                El perfil proactivo
               </div>
 
               <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
-                El Cliente: Alex
+                El Cliente: Javier Cela Hedo
               </h2>
 
               <p className="text-[#E0E0E0] text-lg leading-relaxed">
-                Alex es un freelance que gestiona datos sensibles de sus clientes. No es un experto informático; su prioridad es su negocio. Un día, recibe un correo urgente de un supuesto proveedor, hace clic y su pantalla se bloquea. El pánico se apodera de él.
+                Javier trabaja en el sector tecnológico o administrativo y sabe que la seguridad es clave hoy en día. Es una persona proactiva, sea empleado o pequeño empresario, que busca estar un paso por delante de las amenazas. Sin embargo, se siente vulnerable ante un entorno digital donde los ciberataques y las filtraciones a grandes empresas son constantes.
               </p>
 
               <ul
@@ -98,15 +98,15 @@ export default function AboutUs() {
               >
                 <li className="flex items-start gap-3 text-base text-[#E0E0E0]">
                   <span style={{ color: "#009dff" }} className="mt-1 font-bold">➤</span>
-                  <span>Perfil: Autónomo sin conocimientos técnicos.</span>
+                  <span>Perfil: Profesional IT o empresario consciente de los riesgos.</span>
                 </li>
                 <li className="flex items-start gap-3 text-base text-[#E0E0E0]">
                   <span style={{ color: "#009dff" }} className="mt-1 font-bold">➤</span>
-                  <span>Situación: Bajo ataque de Ransomware.</span>
+                  <span>Situación: Busca protección activa ante noticias constantes de ataques.</span>
                 </li>
                 <li className="flex items-start gap-3 text-base text-[#E0E0E0]">
                   <span style={{ color: "#009dff" }} className="mt-1 font-bold">➤</span>
-                  <span>Estado emocional: Pánico y confusión.</span>
+                  <span>Mindset: Proactivo, busca soluciones rápidas y efectivas.</span>
                 </li>
               </ul>
             </div>
@@ -122,12 +122,11 @@ export default function AboutUs() {
                   style={{ background: "linear-gradient(135deg, #009dff20, transparent)" }}
                 />
                 <img
-                  src="/images/AboutUs/Que.png"
-                  alt="El Cliente: Alex"
+                  src="/images/AboutUs/Javier_Cela.jpeg"
+                  alt="El Cliente: Javier Cela Hedo"
                   className="object-cover w-full h-full opacity-80 group-hover:opacity-100 transition-opacity"
                 />
                 <div className="absolute inset-0 flex items-center justify-center text-white/20 text-6xl font-bold pointer-events-none">
-                  1
                 </div>
               </div>
             </div>
@@ -164,12 +163,11 @@ export default function AboutUs() {
                   style={{ background: "linear-gradient(135deg, #00ffaa20, transparent)" }}
                 />
                 <img
-                  src="/images/AboutUs/Como.png"
+                  src="/images/AboutUs/Que.png"
                   alt="Las Necesidades"
                   className="object-cover w-full h-full opacity-80 group-hover:opacity-100 transition-opacity"
                 />
                 <div className="absolute inset-0 flex items-center justify-center text-white/20 text-6xl font-bold pointer-events-none">
-                  2
                 </div>
               </div>
             </div>
@@ -184,7 +182,7 @@ export default function AboutUs() {
                   color: "#00ffaa",
                 }}
               >
-                ¿Qué necesita Alex ahora mismo?
+                ¿Qué busca Javier para estar seguro?
               </div>
 
               <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
@@ -192,7 +190,7 @@ export default function AboutUs() {
               </h2>
 
               <p className="text-[#E0E0E0] text-lg leading-relaxed">
-                Alex no necesita un curso de ciberseguridad de 20 horas. Necesita recuperar sus archivos YA. Necesita saber si sus cuentas bancarias están seguras y necesita una garantía de que esto no volverá a pasar.
+                Javier necesita saber al instante si sus sistemas están siendo atacados o han sido vulnerados. No quiere perder tiempo; busca orientación inmediata sobre qué hacer tras un incidente para evitar pérdidas de información o dinero, y sentirse tranquilo sabiendo que tiene el control.
               </p>
 
               <ul
@@ -204,15 +202,15 @@ export default function AboutUs() {
               >
                 <li className="flex items-start gap-3 text-base text-[#E0E0E0]">
                   <span style={{ color: "#00ffaa" }} className="mt-1 font-bold">➤</span>
-                  <span>Respuesta inmediata (Incident Response).</span>
+                  <span>Verificación de amenazas y estado del sistema.</span>
                 </li>
                 <li className="flex items-start gap-3 text-base text-[#E0E0E0]">
                   <span style={{ color: "#00ffaa" }} className="mt-1 font-bold">➤</span>
-                  <span>Herramientas de desencriptado.</span>
+                  <span>Orientación rápida post-ataque para mitigar daños.</span>
                 </li>
                 <li className="flex items-start gap-3 text-base text-[#E0E0E0]">
                   <span style={{ color: "#00ffaa" }} className="mt-1 font-bold">➤</span>
-                  <span>Asesoramiento experto sin tecnicismos.</span>
+                  <span>Información actualizada sobre filtraciones recientes.</span>
                 </li>
               </ul>
             </div>
@@ -248,7 +246,7 @@ export default function AboutUs() {
                   color: "#ff0099",
                 }}
               >
-                La barrera de entrada
+                Obstáculos actuales
               </div>
 
               <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
@@ -256,7 +254,7 @@ export default function AboutUs() {
               </h2>
 
               <p className="text-[#E0E0E0] text-lg leading-relaxed">
-                Al intentar solucionarlo, Alex se enfrenta a la realidad. Las consultoras piden miles de euros solo por auditoría. Los foros generales están llenos de ruido y opiniones contradictorias. No sabe en quién confiar.
+                Aunque Javier es proactivo, a menudo carece del conocimiento técnico específico o se enfrenta a servicios de consultoría demasiado costosos. Al buscar por su cuenta en Google o foros, se abruma con información errónea y soluciones genéricas que no resuelven su caso particular.
               </p>
 
               <ul
@@ -268,15 +266,15 @@ export default function AboutUs() {
               >
                 <li className="flex items-start gap-3 text-base text-[#E0E0E0]">
                   <span style={{ color: "#ff0099" }} className="mt-1 font-bold">➤</span>
-                  <span>Altos costes de consultoría tradicional.</span>
+                  <span>Falta de conocimiento técnico especializado.</span>
                 </li>
                 <li className="flex items-start gap-3 text-base text-[#E0E0E0]">
                   <span style={{ color: "#ff0099" }} className="mt-1 font-bold">➤</span>
-                  <span>Desinformación en redes abiertas.</span>
+                  <span>Consultorías costosas y atención poco personalizada.</span>
                 </li>
                 <li className="flex items-start gap-3 text-base text-[#E0E0E0]">
                   <span style={{ color: "#ff0099" }} className="mt-1 font-bold">➤</span>
-                  <span>Miedo al daño reputacional.</span>
+                  <span>Sobrecarga de información errónea en la web.</span>
                 </li>
               </ul>
             </div>
@@ -297,7 +295,6 @@ export default function AboutUs() {
                   className="object-cover w-full h-full opacity-80 group-hover:opacity-100 transition-opacity"
                 />
                 <div className="absolute inset-0 flex items-center justify-center text-white/20 text-6xl font-bold pointer-events-none">
-                  3
                 </div>
               </div>
             </div>
