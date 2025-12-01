@@ -56,7 +56,7 @@ export default function Noticias() {
                       href={`/noticias/${noticia.id}`} 
                       className="text-blue-400 font-semibold text-sm hover:text-blue-300 transition-colors" 
                     >
-                      READ NOW →
+                      LEER AHORA→
                     </a>
                 </div>
               </div>
