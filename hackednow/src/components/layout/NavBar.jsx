@@ -19,6 +19,7 @@ export default function Navbar() {
     { href: '/noticias', label: 'Noticias' },
     { href: '/publicar-caso', label: 'Publicar caso' },
     { href: '/plan-desarrollador', label: 'Plan Premium' },
+    { href: '/plan-experto', label: 'Plan Experto' }
   ];
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
