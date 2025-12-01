@@ -6,25 +6,26 @@ export default function Noticias() {
     <div>
       <main className="container mx-auto px-4 py-8">
         
-        {/* Título Principal */}
         <h1 className="text-4xl font-extrabold text-white-900 mb-10">
-          Página de Noticias
+          Ultimas Noticias
         </h1>
 
-        {/* Contenedor del grid para las noticias */}
-        <section className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"> {}
+        <section className="flex flex-col gap-8">
           
           {noticiasData.map((noticia) => (
             
-        
             <article 
               key={noticia.id} 
- 
-              className="bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-shadow duration-300 hover:shadow-xl flex flex-col" // Flex-col para apilar imagen y texto
+              className="flex bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-shadow duration-300 hover:shadow-xl" // Fondo azul oscuro
             >
               
-              {}
-              <div className="relative w-full h-48 overflow-hidden"> {}
+              <div className="relative w-1/3 h-64 overflow-hidden flex-shrink-0">
+                {/* Categoria*/}
+                <span className="absolute top-4 left-4 bg-gray-700 text-white text-xs font-semibold px-2.5 py-0.5 rounded uppercase tracking-wide z-10">
+                  {noticia.categoria}
+                </span>
+
+                {/* Imagen */}
                 <img 
                   src={noticia.imagen} 
                   alt={noticia.titulo} 
@@ -33,30 +34,31 @@ export default function Noticias() {
                 />
               </div>
 
-              {}
-              <div className="p-4 flex flex-col flex-grow"> {}
+              <div className="w-2/3 p-6 flex flex-col justify-between">
                 <div>
-                  {}
-                  <h2 className="text-xl font-bold text-white mb-2 leading-snug"> {}
+                  {/* Titulo de la noticia */}
+                  <h2 className="text-2xl font-bold text-white mb-4 leading-tight"> 
                     {noticia.titulo}
                   </h2>
                   
-                  {}
-                  <p className="text-sm text-gray-400"> {}
-                    Fuente: {noticia.fuente} | Fecha: {noticia.fecha}
+                  {/* Descripción de la noticia */}
+                  <p className="text-base text-gray-300 mb-4 line-clamp-3"> 
+                    {noticia.descripcion}
                   </p>
                 </div>
                 
-                {/*Enlace "READ NOW"*/}
-                { <div className="mt-auto pt-4"> 
+                {/* Enlace Read Now */}
+                <div className="mt-auto">
+                    <p className="text-sm text-gray-400 mb-2">
+                        Fuente: {noticia.fuente} | Fecha: {noticia.fecha}
+                    </p>
                     <a 
                       href={`/noticias/${noticia.id}`} 
-                      className="text-blue-400 font-semibold text-sm hover:text-blue-300 transition-colors"
+                      className="text-blue-400 font-semibold text-sm hover:text-blue-300 transition-colors" 
                     >
                       READ NOW →
                     </a>
                 </div>
-                }
               </div>
 
             </article>
