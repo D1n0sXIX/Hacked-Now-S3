@@ -81,7 +81,7 @@ export default function SolutionSection() {
                     Resuelve casos, sube de rango y comienza a cobrar comisiones por tu ayuda experta.
                   </p>
                 </div>
-                <Link href="/auth/register">
+                <Link href="plan-experto">
                   <button className="px-8 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-bold text-sm transition-all hover:scale-105 shadow-lg">
                     Empezar Carrera
                   </button>
