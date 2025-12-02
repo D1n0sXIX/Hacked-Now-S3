@@ -6,6 +6,7 @@ import SolutionSection from "@/components/AboutUs/SolutionSection";
 import StatsSection from "@/components/AboutUs/StatsSection";
 import CTASection from "@/components/AboutUs/CTASection";
 import AnimatedSection from "@/components/AnimatedSection";
+import SegundaEntrevista from "@/components/AboutUs/SegundaEntrevista";
 
 export default function AboutUs() {
   const [visibleSections, setVisibleSections] = useState({});
@@ -315,6 +316,13 @@ export default function AboutUs() {
       <AnimatedSection>
         <CTASection />
       </AnimatedSection>
+
+    <AnimatedSection className="min-h-screen flex items-center">
+            <SegundaEntrevista />
+    </AnimatedSection>
+    
     </>
+
+
   );
 }
