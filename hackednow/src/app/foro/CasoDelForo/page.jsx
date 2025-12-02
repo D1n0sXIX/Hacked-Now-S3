@@ -99,7 +99,7 @@ function CasoDelForoContent() {
       )}
 
       <div className="comentarios-lista">
-  {caso.comentarios.length > 0 ? (
+  {caso.comentarios && caso.comentarios.length > 0 ? (
     caso.comentarios.map((comentario, index) => (
       <div key={`coment-${index}`} className="comentario">
         <div className="comentario-header">
