@@ -64,10 +64,10 @@ Fase Desarrollo — Asignaciones (vacías donde no hay tareas asigandas):
 
 - [x] Ivan: Inicio 
 - [x] Alex: PaginaUser
-- [ ] Henry: Foro + Caso-Foro ( + Entrevistas)
-- [ ] Javi: Zona-Colaboradores-AboutUs
-- [ ] Juan: AboutUs
-- [ ] Willy: ZonaNoticias-Una-Noticia
+- [x] Henry: Foro + Caso-Foro ( + Entrevistas)
+- [x] Javi: Zona-Colaboradores-AboutUs
+- [x] Juan: AboutUs
+- [x] Willy: ZonaNoticias-Una-Noticia
 - [x] Alej: Pagina Publicar-caso
 
 
