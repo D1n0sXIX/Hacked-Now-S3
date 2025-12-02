@@ -6,7 +6,13 @@ import SolutionSection from "@/components/AboutUs/SolutionSection";
 import StatsSection from "@/components/AboutUs/StatsSection";
 import CTASection from "@/components/AboutUs/CTASection";
 import AnimatedSection from "@/components/AnimatedSection";
-import SegundaEntrevista from "@/components/AboutUs/SegundaEntrevista";
+
+import { 
+  SectionCliente, 
+  SectionNecesidades, 
+  SectionProblemas, 
+  SectionAlternativas 
+} from "@/components/AboutUs/SegundaEntrevista";
 
 export default function AboutUs() {
   const [visibleSections, setVisibleSections] = useState({});
@@ -305,6 +311,25 @@ export default function AboutUs() {
         </div>
       </AnimatedSection>
 
+
+      <AnimatedSection className="min-h-screen flex items-center">
+        <SectionCliente />
+      </AnimatedSection>
+
+      <AnimatedSection className="min-h-screen flex items-center">
+        <SectionNecesidades />
+      </AnimatedSection>
+
+      <AnimatedSection className="min-h-screen flex items-center">
+        <SectionProblemas />
+      </AnimatedSection>
+
+      <AnimatedSection className="min-h-screen flex items-center">
+        <SectionAlternativas />
+      </AnimatedSection>
+    
+
+
       <AnimatedSection className="bg-gradient-to-b from-[#0b1219] via-[#009dff]/5 to-[#0b1219]" >
         <SolutionSection />
       </AnimatedSection>
@@ -317,9 +342,6 @@ export default function AboutUs() {
         <CTASection />
       </AnimatedSection>
 
-    <AnimatedSection className="min-h-screen flex items-center">
-            <SegundaEntrevista />
-    </AnimatedSection>
     
     </>
 
