@@ -61,7 +61,7 @@ function CasoDelForoContent() {
         <div className="caso-meta">
           <span className="caso-categoria-badge">{caso.categoria}</span>
           <div className="caso-etiquetas-detalle">
-            {caso.etiquetas.map((etiqueta, index) => (
+            {caso.etiquetas && caso.etiquetas.length > 0 && caso.etiquetas.map((etiqueta, index) => (
               <span key={index} className="etiqueta-detalle">
                 {etiqueta}
               </span>
