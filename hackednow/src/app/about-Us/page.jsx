@@ -52,7 +52,7 @@ export default function AboutUs() {
 
   return (
     <>
-      <AnimatedSection className="min-h-screen">
+      <AnimatedSection className="min-h-screen pt-20">
         <HeroSection />
       </AnimatedSection>
       

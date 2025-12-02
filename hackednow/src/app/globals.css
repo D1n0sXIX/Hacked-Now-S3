@@ -35,12 +35,11 @@
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
     height: 100vh;
-    scroll-padding-top: 100px; /* Ajustá este valor a la altura de tu Navbar */
+    scroll-padding-top: 64px;
   }
 
   html.snap-scroll body {
-    height: auto;
-    overflow: visible;
+    min-height: 100vh;
   }
 
   /* Reset básico */
