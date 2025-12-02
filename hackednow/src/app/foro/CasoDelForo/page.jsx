@@ -1,11 +1,11 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import casosData from "@/data/casos.json";
 import "./caso-detalle.css";
 
-export default function CasoDelForo() {
+function CasoDelForoContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const [caso, setCaso] = useState(null);
@@ -17,7 +17,7 @@ export default function CasoDelForo() {
     
     // Buscar el caso en localStorage
     const casosGuardados = localStorage.getItem('casos');
-    const casosLocalStorage = casosGuardados ? JSON.parse(casosGuardados) : [];
+    const casosLocalStorage = casosGuardados ? JSON.parse(casosGuardados) : []; // Si no hay casos, usar array vacío
     
     // Combinar con casos del JSON
     const todosLosCasos = [...casosLocalStorage, ...casosData];
@@ -123,5 +123,17 @@ export default function CasoDelForo() {
         )}
       </div>
     </div>
+  );
+}
+
+export default function CasoDelForo() {
+  return (
+    <Suspense fallback={
+      <div className="caso-detalle-container">
+        <p>Cargando caso...</p>
+      </div>
+    }>
+      <CasoDelForoContent />
+    </Suspense>
   );
 }
