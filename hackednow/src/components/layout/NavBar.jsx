@@ -19,7 +19,8 @@ export default function Navbar() {
     { href: '/noticias', label: 'Noticias' },
     { href: '/publicar-caso', label: 'Publicar caso' },
     { href: '/plan-desarrollador', label: 'Plan Premium' },
-    { href: '/plan-experto', label: 'Plan Experto' }
+    { href: '/plan-experto', label: 'Plan Experto' },
+    { href: '/about-Us', label: 'About Us' },
   ];
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
@@ -48,7 +49,7 @@ export default function Navbar() {
   }
 
   return (
-    <header className="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#203b4b] px-4 sm:px-6 lg:px-10 py-3 relative">
+    <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#203b4b] px-4 sm:px-6 lg:px-10 py-3 bg-[#0f1c24] backdrop-blur-md">
       {/* Logo */}
       <Link href="/" className="flex items-center gap-3 text-white hover:text-[#009dff] transition-colors z-20">
         <div className="text-[#009dff]">
