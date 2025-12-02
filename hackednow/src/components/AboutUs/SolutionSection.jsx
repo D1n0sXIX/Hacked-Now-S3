@@ -1,4 +1,7 @@
-import { CommunityIcon, ExpertIcon, ToolsIcon, MoneyIcon } from "@/components/ui/Icons";
+
+import { Users, Shield, Wrench, Wallet } from "lucide-react";
+
+import Link from "next/link";
 
 function SolutionCard({ icon, title, description, color, badge }) {
   return (
@@ -44,7 +47,7 @@ export default function SolutionSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {/* Card 1: Comunidad */}
           <SolutionCard
-            icon={<CommunityIcon />}
+            icon={<Users />}
             title="Comunidad e IA"
             description="Respuestas inmediatas de usuarios y nuestra IA asistente para casos urgentes."
             color="#009dff"
@@ -52,7 +55,7 @@ export default function SolutionSection() {
 
           {/* Card 2: Expertos */}
           <SolutionCard
-            icon={<ExpertIcon />}
+            icon={<Shield />}
             title="Expertos Verificados"
             description="Ayuda profesional validada para casos críticos que requieren intervención experta."
             color="#00ffaa"
@@ -61,7 +64,7 @@ export default function SolutionSection() {
 
           {/* Card 3: Tools */}
           <SolutionCard
-            icon={<ToolsIcon />}
+            icon={<Wrench />}
             title="Tools & News"
             description="Herramientas de desencriptado y alertas de filtraciones en tiempo real."
             color="#ff0099"
@@ -72,7 +75,7 @@ export default function SolutionSection() {
             <div className="bg-[#172a36]/60 p-8 rounded-xl border border-white/10 hover:border-purple-500 transition-all group hover:-translate-y-2">
               <div className="flex flex-col md:flex-row items-center gap-6">
                 <div className="h-16 w-16 bg-purple-500/20 rounded-full flex-shrink-0 flex items-center justify-center group-hover:bg-purple-600 transition-colors">
-                  <MoneyIcon />
+                  <Wallet  />
                 </div>
                 <div className="text-left flex-1">
                   <h3 className="text-2xl font-bold text-white mb-2">Conviértete en Experto</h3>
@@ -80,9 +83,11 @@ export default function SolutionSection() {
                     Resuelve casos, sube de rango y comienza a cobrar comisiones por tu ayuda experta.
                   </p>
                 </div>
+                <Link href="/plan-experto">
                 <button className="px-8 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-bold text-sm transition-all hover:scale-105 shadow-lg">
                   Empezar Carrera
                 </button>
+                </Link>
               </div>
             </div>
           </div>
