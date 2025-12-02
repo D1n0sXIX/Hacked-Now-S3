@@ -21,10 +21,13 @@ export default function AboutUs() {
   const refNecesidades = useRef();
   const refProblemas = useRef();
 
+  const refAlternativas = useRef();
+
   const sections = [
     { id: "cliente", ref: refCliente },
     { id: "necesidades", ref: refNecesidades },
     { id: "problemas", ref: refProblemas },
+    { id: "alternativas", ref: refAlternativas },
   ];
 
   useEffect(() => {
@@ -306,6 +309,91 @@ export default function AboutUs() {
             <div
               className="w-1 h-16 rounded-full"
               style={{ background: "linear-gradient(to bottom, #ff0099, transparent)" }}
+            />
+          </div>
+        </div>
+      </AnimatedSection>
+
+      {/* Sección 4: Alternativas */}
+      <AnimatedSection>
+        <div
+          ref={refAlternativas} // Asegúrate de añadir: const refAlternativas = useRef(); al inicio
+          data-id="alternativas" // Y añadirlo al array 'sections'
+          className={`container mx-auto px-6 py-24 transition-all duration-1000 ${
+            visibleSections.alternativas ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
+        >
+          <div className="flex flex-col md:flex-row items-center gap-12 md:gap-20">
+            {/* Imagen (Izquierda para alternar el zig-zag) */}
+            <div className="w-full md:w-1/2 md:order-1">
+              <div
+                className="relative aspect-video rounded-2xl overflow-hidden border group transition-all duration-500 shadow-2xl"
+                style={{ borderColor: "#f59e0b30" }}
+              >
+                <div
+                  className="absolute inset-0 transition-all duration-500 group-hover:scale-105"
+                  style={{ background: "linear-gradient(135deg, #f59e0b20, transparent)" }}
+                />
+                <img
+                  src="/images/AboutUs/Alternativas.png" 
+                  alt="Alternativas Actuales"
+                  className="object-cover w-full h-full opacity-80 group-hover:opacity-100 transition-opacity"
+                />
+                <div className="absolute inset-0 flex items-center justify-center text-white/20 text-6xl font-bold pointer-events-none">
+                  
+                </div>
+              </div>
+            </div>
+
+            {/* Contenido Textual (Derecha) */}
+            <div className="w-full md:w-1/2 space-y-6 md:order-2">
+              <div
+                className="inline-block px-3 py-1 rounded-full border text-xs font-bold uppercase tracking-wider mb-2"
+                style={{
+                  borderColor: "#f59e0b30",
+                  backgroundColor: "#f59e0b10",
+                  color: "#f59e0b",
+                }}
+              >
+                Soluciones insuficientes
+              </div>
+
+              <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
+                Las Alternativas
+              </h2>
+
+              <p className="text-[#E0E0E0] text-lg leading-relaxed">
+                Actualmente, Javier intenta resolver sus problemas usando foros online, herramientas gratuitas o buscando en Google, lo que a menudo resulta en información incompleta o errónea. Las opciones de pago, como consultorías tradicionales, suelen ser demasiado caras y carecen de la atención personalizada y rapidez que él necesita.
+              </p>
+
+              <ul
+                className="space-y-3 mt-6 p-6 rounded-xl border-l-4"
+                style={{
+                  backgroundColor: "#f59e0b10",
+                  borderColor: "#f59e0b",
+                }}
+              >
+                <li className="flex items-start gap-3 text-base text-[#E0E0E0]">
+                  <span style={{ color: "#f59e0b" }} className="mt-1 font-bold">➤</span>
+                  <span>Búsqueda en foros y Google (riesgo de desinformación).</span>
+                </li>
+                <li className="flex items-start gap-3 text-base text-[#E0E0E0]">
+                  <span style={{ color: "#f59e0b" }} className="mt-1 font-bold">➤</span>
+                  <span>Herramientas gratuitas limitadas y sin soporte.</span>
+                </li>
+                <li className="flex items-start gap-3 text-base text-[#E0E0E0]">
+                  <span style={{ color: "#f59e0b" }} className="mt-1 font-bold">➤</span>
+                  <span>Consultorías tradicionales costosas y lentas.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Timeline Connector Final (opcional, si hay más secciones después) */}
+          <div className="flex justify-center mt-16">
+            <div
+              className="w-1 h-16 rounded-full"
+              style={{ background: "linear-gradient(to bottom, #f59e0b, transparent)" }}
             />
           </div>
         </div>

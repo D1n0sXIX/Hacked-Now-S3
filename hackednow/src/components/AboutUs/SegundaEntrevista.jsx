@@ -1,12 +1,12 @@
 import React from "react";
 
-// Configuración de colores (Global para mantener coherencia)
-const color = "#009dff"; 
-const colorLow = "#009dff10"; 
-const colorBorder = "#009dff30"; 
-
-// --- 1. COMPONENTE CLIENTE (Sarah) ---
+// --- 1. COMPONENTE CLIENTE (Sarah) - AZUL ---
 export function SectionCliente() {
+  // Paleta Azul Cyber
+  const color = "#009dff"; 
+  const colorLow = "#009dff10"; 
+  const colorBorder = "#009dff30"; 
+
   return (
     <div className="container mx-auto px-6 py-12">
       <div className="flex flex-col md:flex-row items-center gap-12 md:gap-20">
@@ -44,8 +44,13 @@ export function SectionCliente() {
   );
 }
 
-// --- 2. COMPONENTE NECESIDADES ---
+// --- 2. COMPONENTE NECESIDADES (Sarah) - VERDE ---
 export function SectionNecesidades() {
+  // Paleta Verde Neón
+  const color = "#00ffaa";
+  const colorLow = "#00ffaa10";
+  const colorBorder = "#00ffaa30";
+
   return (
     <div className="container mx-auto px-6 py-12">
       <div className="flex flex-col md:flex-row-reverse items-center gap-12 md:gap-20">
@@ -83,8 +88,13 @@ export function SectionNecesidades() {
   );
 }
 
-// --- 3. COMPONENTE PROBLEMAS ---
+// --- 3. COMPONENTE PROBLEMAS (Sarah) - ROSA ---
 export function SectionProblemas() {
+  // Paleta Rosa Magenta
+  const color = "#ff0099";
+  const colorLow = "#ff009910";
+  const colorBorder = "#ff009930";
+
   return (
     <div className="container mx-auto px-6 py-12">
       <div className="flex flex-col md:flex-row items-center gap-12 md:gap-20">
@@ -122,8 +132,13 @@ export function SectionProblemas() {
   );
 }
 
-// --- 4. COMPONENTE ALTERNATIVAS ---
+// --- 4. COMPONENTE ALTERNATIVAS (Sarah) - NARANJA ---
 export function SectionAlternativas() {
+  // Paleta Naranja Ámbar
+  const color = "#f59e0b";
+  const colorLow = "#f59e0b10";
+  const colorBorder = "#f59e0b30";
+
   return (
     <div className="container mx-auto px-6 py-12">
       <div className="flex flex-col md:flex-row-reverse items-center gap-12 md:gap-20">
