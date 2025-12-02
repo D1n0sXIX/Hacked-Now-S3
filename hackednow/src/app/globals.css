@@ -35,7 +35,7 @@
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
     height: 100vh;
-    scroll-padding-top: 0px; /* Ajustá este valor a la altura de tu Navbar */
+    scroll-padding-top: 100px; /* Ajustá este valor a la altura de tu Navbar */
   }
 
   html.snap-scroll body {
