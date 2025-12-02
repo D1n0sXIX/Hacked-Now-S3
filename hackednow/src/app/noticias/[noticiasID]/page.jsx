@@ -20,8 +20,8 @@ function NoticiasDestacadasSidebar({ currentNoticiaId }) {
                             <img
                                 src={item.imagen}
                                 alt={item.titulo}
-    
-                                className="**w-full h-24 object-cover** rounded-md mb-2" 
+
+                                className="w-full h-24 object-cover rounded-md mb-2" 
                             />
                             
                             <p className="text-sm font-semibold">{item.titulo}</p>
@@ -36,65 +36,67 @@ function NoticiasDestacadasSidebar({ currentNoticiaId }) {
 
 
 export default async function NoticiaDetalle({ params }) {
-  
-  const paramValue = await params;
+  
+  const paramValue = await params;
   const noticiaId = parseInt(paramValue.noticiasID, 10); 
 
-  const noticia = noticiasData.find(n => n.id === noticiaId);
+  const noticia = noticiasData.find(n => n.id === noticiaId);
 
-  const contenidoParrafos = noticia ? noticia.contenido.split('\n').map((parrafo, index) => (
+  const contenidoParrafos = noticia ? noticia.contenido.split('\n').map((parrafo, index) => (
     <p key={index} className="mb-4">
       {parrafo}
     </p>
   )) : null;
 
-  // error en caso de noticia no encontrada (id no encontrada)
-  if (!noticia) {
-    return (
-         <div className="container **mx-auto** px-4 py-8 text-center min-h-screen">
-            <h1 className="text-6xl font-extrabold text-red-600 mb-4">404</h1>
-            <p className="text-xl text-gray-700">Noticia no encontrada.</p>
-            <p className="text-sm text-gray-500 mt-2">No existe un artículo con ID: {paramValue.noticiasID}.</p>
-        </div>
-    );
-  }
+  // error en caso de noticia no encontrada (id no encontrada)
+  if (!noticia) {
+    return (
+     
+      <div className="container mx-auto px-4 py-8 text-center min-h-screen bg-gray-900 text-white">
+        <h1 className="text-6xl font-extrabold text-red-500 mb-4">404</h1>
+        <p className="text-xl text-gray-300">Noticia no encontrada.</p>
+        <p className="text-sm text-gray-500 mt-2">No existe un artículo con ID: {paramValue.noticiasID}.</p>
+      </div>
+    );
+  }
 
 
-  return (
-        <div className="py-8 ">
-         <main className="mx-auto px-4 w-400"  >
-            
-            
-            <div className="flex flex-col md:flex-row">
-              
-              
-              <div className="w-full md:w-3/4"> 
-          
+  return (
+      <div className="py-8 bg-gray-900 min-h-screen">
+
+         <main className="container mx-auto px-4 max-w-screen-xl"  >
+            
+
+            <div className="flex flex-col md:flex-row md:space-x-8">
+              
+              <div className="w-full md:w-3/4"> 
+            
                     <div className="bg-gray-800 p-8 rounded-lg shadow-2xl text-white">
                         
-                        {/* CategorIa */}
+                        {/* Categoría */}
                         <span className="inline-block bg-gray-700 text-white text-sm font-semibold px-3 py-1 rounded-full uppercase tracking-wider mb-4">
                             {noticia.categoria}
                         </span>
                         
-                        {/*Titulo*/}
+                        {/* Titulo */}
                         <h1 className="text-4xl md:text-5xl font-extrabold mb-4 leading-tight">
                             {noticia.titulo}
                         </h1>
                         
-                 
+                  
                         <p className="text-sm text-gray-400 mb-8 border-b border-gray-700 pb-4">
                             <span className="font-semibold">Fuente: {noticia.fuente}</span> | Publicado el {noticia.fecha} | Autor: {noticia.autor}
                         </p>
 
-                        {/*Imagen*/}
+                        {/* Imagen */}
+ 
                         <img 
                             src={noticia.imagen} 
                             alt={noticia.titulo} 
-                            className="block mx-auto w-auto h-auto max-h-96 rounded-lg mb-8 shadow-xl object-cover" 
+                            className="w-full max-h-96 rounded-lg mb-8 shadow-xl object-cover" 
                         />
                         
-                        {/* Descripcion*/}
+                        {/* Descripcion */}
                         <div className="text-xl font-bold text-gray-200 mb-6 border-l-4 border-blue-400 pl-4">
                             <p>{noticia.descripcion}</p>
                         </div>
@@ -114,16 +116,16 @@ export default async function NoticiaDetalle({ params }) {
                             </Link>
                         </div>
                     </div>
-              </div> 
-        
-        
-        {/* sidebar:*/}
-        <div className="w-full md:w-1/4 hidden md:block">
-            <NoticiasDestacadasSidebar currentNoticiaId={noticiaId} />
-        </div>
+              </div> 
+        
+              
+       
+              <div className="w-full md:w-1/4 mt-8 md:mt-0">
+                  <NoticiasDestacadasSidebar currentNoticiaId={noticiaId} />
+              </div>
 
-        </div> 
-      </main>
-    </div>
-  );
+            </div> 
+         </main>
+      </div>
+  );
 }
