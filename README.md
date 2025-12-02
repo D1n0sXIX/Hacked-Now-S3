@@ -1,8 +1,5 @@
 # Hacked-Now-S3
 
-Informaccion a añadir: 
-# Hacked-Now-S3
-
 Proyecto: Hacked-Now-S3 — Planificación y documentación para el Sprint 3
 
 Resumen
