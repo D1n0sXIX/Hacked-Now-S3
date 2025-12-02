@@ -35,7 +35,7 @@ export default function Navbar() {
   // Mientras carga, no mostrar nada para evitar flickering
   if (isLoading) {
     return (
-      <header className="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#203b4b] px-4 sm:px-6 lg:px-10 py-3">
+      <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#203b4b] px-4 sm:px-6 lg:px-10 py-3 bg-[#0f1c24]">
         <Link href="/" className="flex items-center gap-3 text-white">
           <div className="text-[#009dff]">
             <Logo className="h-8 w-8 sm:h-9 sm:w-9" />
@@ -49,7 +49,7 @@ export default function Navbar() {
   }
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#203b4b] px-4 sm:px-6 lg:px-10 py-3 bg-[#0f1c24] backdrop-blur-md">
+    <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#203b4b] px-4 sm:px-6 lg:px-10 py-3 bg-[#0f1c24]">
       {/* Logo */}
       <Link href="/" className="flex items-center gap-3 text-white hover:text-[#009dff] transition-colors z-20">
         <div className="text-[#009dff]">
