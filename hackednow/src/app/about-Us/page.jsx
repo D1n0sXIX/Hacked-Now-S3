@@ -52,9 +52,11 @@ export default function AboutUs() {
 
   return (
     <>
-      <AnimatedSection className="min-h-screen pt-20">
+      <AnimatedSection className="min-h-screen pt-20 relative overflow-hidden">
+        {/* Fondo que cubre todo el AnimatedSection */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#009dff] opacity-10 blur-[120px] rounded-full pointer-events-none" />
         <HeroSection />
-      </AnimatedSection>
+    </AnimatedSection>
       
       {/* Sección 1: El Cliente */}
       <AnimatedSection>
