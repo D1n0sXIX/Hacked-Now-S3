@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function CTASection() {
   return (
     <section className="py-32 text-center relative z-10 snap-start snap-always min-h-screen flex items-center justify-center">
@@ -15,10 +17,14 @@ export default function CTASection() {
             <p className="text-[#E0E0E0] text-xl mb-12 max-w-2xl mx-auto leading-relaxed">
               Únete a la plataforma donde expertos, IA y comunidad trabajan juntos para protegerte.
             </p>
-
-            <button className="inline-block bg-[#009dff] text-black font-bold py-5 px-12 rounded-lg text-lg shadow-[0_0_25px_rgba(0,157,255,0.5)] hover:shadow-[0_0_40px_rgba(0,157,255,0.7)] hover:-translate-y-1 hover:bg-[#33b1ff] transition-all duration-300 relative z-20">
+        <Link href="/register">
+            <button 
+            
+            className="inline-block bg-[#009dff] text-black font-bold py-5 px-12 rounded-lg text-lg shadow-[0_0_25px_rgba(0,157,255,0.5)] hover:shadow-[0_0_40px_rgba(0,157,255,0.7)] hover:-translate-y-1 hover:bg-[#33b1ff] transition-all duration-300 relative z-20 cursor-pointer"
+            >
               Únete a la comunidad →
             </button>
+        </Link>
 
             <div className="mt-10 flex justify-center gap-8 text-sm text-[#E0E0E0]/60">
               <span>✓ Gratis para empezar</span>
