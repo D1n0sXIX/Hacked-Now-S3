@@ -1,6 +1,6 @@
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden snap-start snap-always">
+    <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
       <div className="container mx-auto px-6 relative z-10 text-center">
         <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-white leading-tight mb-6 tracking-tight animate-fade-in">
           La Historia de{" "}
@@ -24,6 +24,6 @@ export default function HeroSection() {
       </div>
 
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#009dff] opacity-10 blur-[120px] rounded-full pointer-events-none" />
-    </section>
+    </div>
   );
 }

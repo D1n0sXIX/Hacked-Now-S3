@@ -8,7 +8,7 @@ export default function StatsSection() {
   ];
 
   return (
-    <section className="py-32 snap-center snap-always">
+    <div className="w-full h-full flex items-center justify-center py-20">
       <div className="container mx-auto px-6">
         <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
@@ -28,7 +28,7 @@ export default function StatsSection() {
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 
