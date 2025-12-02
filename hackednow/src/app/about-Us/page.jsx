@@ -52,14 +52,12 @@ export default function AboutUs() {
 
   return (
     <>
-      <AnimatedSection 
-        className="snap-start pt-20" // Padding solo en la primera
-      >
+      <AnimatedSection className="min-h-screen">
         <HeroSection />
       </AnimatedSection>
       
       {/* Sección 1: El Cliente */}
-      <div className="snap-start snap-always">
+      <AnimatedSection>
         <div
           ref={refCliente}
           data-id="cliente"
@@ -126,8 +124,6 @@ export default function AboutUs() {
                   alt="El Cliente: Javier Cela Hedo"
                   className="object-cover w-full h-full opacity-80 group-hover:opacity-100 transition-opacity"
                 />
-                <div className="absolute inset-0 flex items-center justify-center text-white/20 text-6xl font-bold pointer-events-none">
-                </div>
               </div>
             </div>
           </div>
@@ -140,10 +136,10 @@ export default function AboutUs() {
             />
           </div>
         </div>
-      </div>
+      </AnimatedSection>
 
       {/* Sección 2: Las Necesidades */}
-      <div className="snap-start snap-always">
+      <AnimatedSection>
         <div
           ref={refNecesidades}
           data-id="necesidades"
@@ -167,8 +163,6 @@ export default function AboutUs() {
                   alt="Las Necesidades"
                   className="object-cover w-full h-full opacity-80 group-hover:opacity-100 transition-opacity"
                 />
-                <div className="absolute inset-0 flex items-center justify-center text-white/20 text-6xl font-bold pointer-events-none">
-                </div>
               </div>
             </div>
 
@@ -224,10 +218,10 @@ export default function AboutUs() {
             />
           </div>
         </div>
-      </div>
+      </AnimatedSection>
 
       {/* Sección 3: Los Problemas */}
-      <div className="snap-start snap-always">
+      <AnimatedSection>
         <div
           ref={refProblemas}
           data-id="problemas"
@@ -294,8 +288,6 @@ export default function AboutUs() {
                   alt="Los Problemas"
                   className="object-cover w-full h-full opacity-80 group-hover:opacity-100 transition-opacity"
                 />
-                <div className="absolute inset-0 flex items-center justify-center text-white/20 text-6xl font-bold pointer-events-none">
-                </div>
               </div>
             </div>
           </div>
@@ -308,23 +300,19 @@ export default function AboutUs() {
             />
           </div>
         </div>
-      </div>
+      </AnimatedSection>
 
+      <AnimatedSection className="bg-gradient-to-b from-[#0b1219] via-[#009dff]/5 to-[#0b1219]" >
+        <SolutionSection />
+      </AnimatedSection>
+      
+      <AnimatedSection className="bg-[#0b1219]">
+        <StatsSection />
+      </AnimatedSection>
       
       <AnimatedSection>
-        <div className="snap-start snap-always">
-        <SolutionSection />
-      </div>
-      </AnimatedSection>
-      
-
-      <AnimatedSection backgroundColor="black">
-            <StatsSection />
-      </AnimatedSection>
-      
-      <div className="snap-start snap-always">
         <CTASection />
-      </div>
+      </AnimatedSection>
     </>
   );
 }

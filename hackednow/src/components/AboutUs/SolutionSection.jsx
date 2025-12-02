@@ -1,6 +1,4 @@
-
 import { Users, Shield, Wrench, Wallet } from "lucide-react";
-
 import Link from "next/link";
 
 function SolutionCard({ icon, title, description, color, badge }) {
@@ -30,10 +28,10 @@ function SolutionCard({ icon, title, description, color, badge }) {
 
 export default function SolutionSection() {
   return (
-    <section className="relative py-32 snap-start snap-always">
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0b1219] via-[#009dff]/5 to-[#0b1219] pointer-events-none" />
+    <div className="relative w-full px-6 py-20">
+       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#009dff]/5 to-transparent pointer-events-none" />
 
-      <div className="container mx-auto px-6 text-center relative z-10">
+        <div className="container mx-auto text-center relative z-10">
         <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
           La Solución:{" "}
           <span className="text-[#009dff] drop-shadow-[0_0_15px_rgba(0,157,255,0.4)]">
@@ -75,7 +73,7 @@ export default function SolutionSection() {
             <div className="bg-[#172a36]/60 p-8 rounded-xl border border-white/10 hover:border-purple-500 transition-all group hover:-translate-y-2">
               <div className="flex flex-col md:flex-row items-center gap-6">
                 <div className="h-16 w-16 bg-purple-500/20 rounded-full flex-shrink-0 flex items-center justify-center group-hover:bg-purple-600 transition-colors">
-                  <Wallet  />
+                  <Wallet />
                 </div>
                 <div className="text-left flex-1">
                   <h3 className="text-2xl font-bold text-white mb-2">Conviértete en Experto</h3>
@@ -84,15 +82,15 @@ export default function SolutionSection() {
                   </p>
                 </div>
                 <Link href="/plan-experto">
-                <button className="px-8 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-bold text-sm transition-all hover:scale-105 shadow-lg">
-                  Empezar Carrera
-                </button>
+                  <button className="px-8 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-bold text-sm transition-all hover:scale-105 shadow-lg">
+                    Empezar Carrera
+                  </button>
                 </Link>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
