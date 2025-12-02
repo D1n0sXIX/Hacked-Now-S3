@@ -98,30 +98,26 @@ function CasoDelForoContent() {
         </div>
       )}
 
-      <div className="caso-comentarios">
-        <h2>Comentarios ({caso.comentarios?.length || 0})</h2>
-        {caso.comentarios && caso.comentarios.length > 0 ? (
-          <div className="comentarios-lista">
-            {caso.comentarios.map((comentario) => (
-              <div key={comentario.id} className="comentario">
-                <div className="comentario-header">
-                  <span className="comentario-usuario">👤 {comentario.usuario}</span>
-                  <span className="comentario-fecha">
-                    {new Date(comentario.fecha).toLocaleDateString('es-ES', {
-                      year: 'numeric',
-                      month: 'short',
-                      day: 'numeric'
-                    })}
-                  </span>
-                </div>
-                <p className="comentario-texto">{comentario.texto}</p>
-              </div>
-            ))}
-          </div>
-        ) : (
-          <p className="sin-comentarios">No hay comentarios aún. Sé el primero en comentar.</p>
-        )}
+      <div className="comentarios-lista">
+  {caso.comentarios.length > 0 ? (
+    caso.comentarios.map((comentario, index) => (
+      <div key={`coment-${index}`} className="comentario">
+        <div className="comentario-header">
+          <span className="comentario-usuario">{comentario.usuario}</span>
+          <span className="comentario-fecha">
+            {new Date(comentario.fecha).toLocaleDateString("es-ES")}
+          </span>
+        </div>
+        <p className="comentario-texto">{comentario.texto}</p>
       </div>
+    ))
+  ) : (
+    <p className="sin-comentarios">
+      No hay comentarios aún. Sé el primero en comentar.
+    </p>
+  )}
+</div>
+
     </div>
   );
 }

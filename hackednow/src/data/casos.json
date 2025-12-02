@@ -51,16 +51,23 @@
     ]
   },
   {
-    "id": "3",
-    "titulo": "Malware detectado en estación de trabajo",
-    "descripcion": "El antivirus detectó un troyano en el equipo de contabilidad. Sistema operativo Windows 10",
-    "categoria": "malware",
-    "etiquetas": ["troyano", "windows", "antivirus"],
-    "compartidoEnForo": true,
-    "fechaCreacion": "2025-11-29T09:15:00.000Z",
-    "estado": "publicado",
-    "usuario": "Miguel López",
-    "respuestaExpertos": null,
-    "comentarios": []
-  }
+  "id": "3",
+  "titulo": "Malware detectado en estación de trabajo",
+  "descripcion": "El antivirus detectó un troyano en el equipo de contabilidad. Sistema operativo Windows 10.",
+  "categoria": "malware",
+  "etiquetas": ["troyano", "windows", "antivirus"],
+  "compartidoEnForo": true,
+  "fechaCreacion": "2025-11-29T09:15:00.000Z",
+  "estado": "publicado",
+  "usuario": "Miguel López",
+  "respuestaExpertos": null,
+  "comentarios": [
+    {
+      "usuario": "Roberto Fernández",
+      "fecha": "2025-11-29T12:40:00.000Z",
+      "texto": "Aísla el equipo inmediatamente de la red para evitar propagación. No intentes borrar el archivo manualmente. Ejecuta un análisis completo con el antivirus y revisa si el troyano ha intentado modificar claves de inicio o procesos. Si gestionáis datos sensibles, reporta el incidente al equipo de seguridad."
+    }
+  ]
+}
+
 ]
