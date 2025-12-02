@@ -18,7 +18,7 @@ export default function CTASection() {
               Únete a la plataforma donde expertos, IA y comunidad trabajan juntos para protegerte.
             </p>
             
-            <Link href="/register">
+            <Link href="auth/register">
               <button 
                 className="inline-block bg-[#009dff] text-black font-bold py-5 px-12 rounded-lg text-lg shadow-[0_0_25px_rgba(0,157,255,0.5)] hover:shadow-[0_0_40px_rgba(0,157,255,0.7)] hover:-translate-y-1 hover:bg-[#33b1ff] transition-all duration-300 relative z-20 cursor-pointer"
               >
