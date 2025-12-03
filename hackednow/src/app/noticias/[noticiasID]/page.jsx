@@ -1,129 +1,72 @@
-import noticiasData from '../../../data/noticias.json'; 
-import Link from 'next/link'; 
+import noticiasData from '../../data/noticias.json'; 
 
-// Componente para las noticias destacadas (Sidebar)
-function NoticiasDestacadasSidebar({ currentNoticiaId }) {
-    const noticiasDestacadas = noticiasData.filter(n => n.id !== currentNoticiaId).slice(0, 5); 
+export default function Noticias() {
+  
+  return (
+    <div>
+      <main className="container mx-auto px-4 py-8">
+        
+        <h1 className="text-4xl font-extrabold text-white mb-10">
+          Ultimas Noticias
+        </h1>
 
-    return (
-        // Contenedor del Sidebar
-        <aside className="bg-gray-800 p-6 rounded-lg shadow-2xl text-white sticky top-4">
-            <h2 className="text-xl font-bold border-b border-gray-700 pb-3 mb-4 text-blue-400">Otras Noticias</h2>
-            
-            <ul className="space-y-4">
-                {noticiasDestacadas.map((item) => (
-                    <li key={item.id} className="border-b border-gray-700 last:border-b-0 pb-3">
-                        <Link 
-                            href={`/noticias/${item.id}`} 
-                            className="block hover:text-blue-300 transition-colors"
-                        >
-                            <img
-                                src={item.imagen}
-                                alt={item.titulo}
-    
-                                className="**w-full h-24 object-cover** rounded-md mb-2" 
-                            />
-                            
-                            <p className="text-sm font-semibold">{item.titulo}</p>
-                            <p className="text-xs text-gray-400 mt-1">{item.fecha}</p>
-                        </Link>
-                    </li>
-                ))}
-            </ul>
-        </aside>
-    );
-}
-
-
-export default async function NoticiaDetalle({ params }) {
-  
-  const paramValue = await params;
-  const noticiaId = parseInt(paramValue.noticiasID, 10); 
-
-  const noticia = noticiasData.find(n => n.id === noticiaId);
-
-  const contenidoParrafos = noticia ? noticia.contenido.split('\n').map((parrafo, index) => (
-    <p key={index} className="mb-4">
-      {parrafo}
-    </p>
-  )) : null;
-
-  // error en caso de noticia no encontrada (id no encontrada)
-  if (!noticia) {
-    return (
-         <div className="container **mx-auto** px-4 py-8 text-center min-h-screen">
-            <h1 className="text-6xl font-extrabold text-red-600 mb-4">404</h1>
-            <p className="text-xl text-gray-700">Noticia no encontrada.</p>
-            <p className="text-sm text-gray-500 mt-2">No existe un artículo con ID: {paramValue.noticiasID}.</p>
-        </div>
-    );
-  }
-
-
-  return (
-        <div className="py-8 ">
-         <main className="mx-auto px-4 w-400"  >
-            
-            
-            <div className="flex flex-col md:flex-row">
-              
-              
-              <div className="w-full md:w-3/4"> 
+        <section className="flex flex-col gap-8">
           
-                    <div className="bg-gray-800 p-8 rounded-lg shadow-2xl text-white">
-                        
-                        {/* CategorIa */}
-                        <span className="inline-block bg-gray-700 text-white text-sm font-semibold px-3 py-1 rounded-full uppercase tracking-wider mb-4">
-                            {noticia.categoria}
-                        </span>
-                        
-                        {/*Titulo*/}
-                        <h1 className="text-4xl md:text-5xl font-extrabold mb-4 leading-tight">
-                            {noticia.titulo}
-                        </h1>
-                        
-                 
-                        <p className="text-sm text-gray-400 mb-8 border-b border-gray-700 pb-4">
-                            <span className="font-semibold">Fuente: {noticia.fuente}</span> | Publicado el {noticia.fecha} | Autor: {noticia.autor}
-                        </p>
+          {noticiasData.map((noticia) => (
+            
+            <article 
+              key={noticia.id} 
+              className="flex flex-col md:flex-row md:h-72 bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-shadow duration-300 hover:shadow-xl"
+            >
+              
+              {/* Bloque de la Imagen */}
+              <div className="relative w-full h-48 md:h-full md:w-1/3 overflow-hidden flex-shrink-0">
+                {/* Categoria*/}
+                <span className="absolute top-4 left-4 bg-gray-700 text-white text-xs font-semibold px-2.5 py-0.5 rounded uppercase tracking-wide z-10">
+                  {noticia.categoria}
+                </span>
 
-                        {/*Imagen*/}
-                        <img 
-                            src={noticia.imagen} 
-                            alt={noticia.titulo} 
-                            className="block mx-auto w-auto h-auto max-h-96 rounded-lg mb-8 shadow-xl object-cover" 
-                        />
-                        
-                        {/* Descripcion*/}
-                        <div className="text-xl font-bold text-gray-200 mb-6 border-l-4 border-blue-400 pl-4">
-                            <p>{noticia.descripcion}</p>
-                        </div>
-                        
-                        {/* Contenido de la noticia */}
-                        <div className="text-base text-gray-300 leading-relaxed space-y-6">
-                            {contenidoParrafos}
-                        </div>
+                {/* Imagen */}
+                <img 
+                  src={noticia.imagen} 
+                  alt={noticia.titulo} 
+                  className="w-full h-full object-cover transform transition-transform duration-300 hover:scale-110" 
+                />
+              </div>
 
-                        {/* Enlace para volver */}
-                        <div className="mt-10 pt-6 border-t border-gray-700">
-                            <Link 
-                                href="/noticias" 
-                                className="text-blue-400 font-semibold text-lg hover:text-blue-300 transition-colors"
-                            >
-                                ← Volver a todas las noticias
-                            </Link>
-                        </div>
-                    </div>
-              </div> 
-        
-        
-        {/* sidebar:*/}
-        <div className="w-full md:w-1/4 hidden md:block">
-            <NoticiasDestacadasSidebar currentNoticiaId={noticiaId} />
-        </div>
+              {/* Bloque del Contenido */}
+              <div className="w-full md:w-2/3 p-6 flex flex-col justify-between md:h-full"> 
+                <div>
+                  {/* Titulo de la noticia */}
+                  <h2 className="text-xl md:text-2xl font-bold text-white mb-4 leading-tight"> 
+                    {noticia.titulo}
+                  </h2>
+                  
+                  {/* Descripción de la noticia */}
+                  <p className="text-base text-gray-300 mb-4 line-clamp-3"> 
+                    {noticia.descripcion}
+                  </p>
+                </div>
+                
+                {/* Enlace Read Now */}
+                <div className="mt-auto">
+                    <p className="text-sm text-gray-400 mb-2">
+                        Fuente: {noticia.fuente} | Fecha: {noticia.fecha}
+                    </p>
+                    <a 
+                      href={`/noticias/${noticia.id}`} 
+                      className="text-blue-400 font-semibold text-sm hover:text-blue-300 transition-colors" 
+                    >
+                      LEER AHORA→
+                    </a>
+                </div>
+              </div>
 
-        </div> 
-      </main>
-    </div>
-  );
+            </article>
+          ))}
+        </section>
+
+      </main>
+    </div>
+  );
 }
